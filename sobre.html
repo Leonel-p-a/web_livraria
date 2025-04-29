@@ -1,0 +1,240 @@
+<!------------------------------------------------------------
+ Created by Duda Gonçalves, Luiza, Gaby e Leonel
+  ----------------------------------------------------------->
+
+  <!DOCTYPE html>
+  <html lang="pt-br">
+  
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Portal dos Livros</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+  
+    <!-- Icon -->
+    <link rel="shortcut icon" href="img/icon2.png" type="image/x-icon">
+  
+    <!-- Fonts -->
+    <link href="https://fonts.cdnfonts.com/css/playfair-display-sc" rel="stylesheet"> <!-- Fonte de Textos em destaque -->
+    <link href="https://fonts.cdnfonts.com/css/cinzel" rel="stylesheet"> <!-- Fonte do navbar-->
+  
+    <!-- Importa o ícone de hambúrguer -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+  
+    <!-- Link para os icons das redes ( esse site é otimo para icons ) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+    <!-- Main CSS File -->
+    <link href="css/main.css" rel="stylesheet">
+
+    <!-- Sobre CSS File -->
+     <link rel="stylesheet" href="css/sobre.css">
+  </head>
+   <!-------------------------------------------------------------------- Navbar Section -------------------------------------------------------------------------------->
+  <body>
+    <div class="container-geral">
+      <header>
+        <span class="site-name">LPT’| Portal dos Livros</span>
+  
+        <i class="material-symbols-outlined" onclick="clickMenu()">menu</i>
+        <nav id="menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="biblioteca.html">Biblioteca</a></li>
+            <li><a href="novidades.html">Novidades</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <li>
+              <div class="carrinho-icon">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="carrinho-contador" id="carrinho-contador">0</span>
+              </div>
+            </li>  
+          </ul>
+        </nav>
+      </header>
+
+      <div id="modal-carrinho" class="modal-carrinho">
+        <div class="modal-carrinho-conteudo">
+          <!-- Conteúdo do Carrinho -->
+          <div id="conteudo-carrinho">
+            <h2>Seu Carrinho</h2>
+            <div class="itens-carrinho" id="itens-carrinho">
+              <!-- Itens serão adicionados aqui dinamicamente -->
+            </div>
+            <div class="total-carrinho">
+              Total: R$ <span id="total-carrinho">0,00</span>
+            </div>
+            <button class="botao-finalizar" id="botao-finalizar">Finalizar Compra</button>
+          </div>
+      
+          <!-- Formulário de Pagamento (inicialmente oculto) -->
+          <div id="form-pagamento" class="form-pagamento">
+            <h2>Finalizar Compra</h2>
+            <form id="formulario-pagamento">
+              <label for="nome">Nome Completo:</label>
+              <input type="text" id="nome" required>
+              
+              <label for="cpf">CPF:</label>
+              <input type="text" id="cpf" required>
+              
+              <label for="cartao">Número do Cartão:</label>
+              <input type="text" id="cartao" required>
+              
+              <label for="cvv">CVV:</label>
+              <input type="text" id="cvv" required>
+              
+              <button type="submit" class="botao-finalizar">Concluir Pagamento</button>
+            </form>
+          </div>
+      
+          <!-- Mensagem de Sucesso (inicialmente oculta) -->
+          <div id="mensagem-sucesso" class="mensagem-sucesso">
+            <i class="fas fa-check-circle"></i>
+            <h2>Pagamento efetuado com sucesso!</h2>
+            <p>Em breve você receberá um e-mail com o código de rastreio do seu produto.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-sobre">
+        <section class="titulo-sobre">
+          <h1>
+            Sobre o Portal dos Livros
+          </h1>
+
+          <p>
+            Um refúgio para Almas Literárias
+          </p>
+
+          <a href="biblioteca.html">
+            Explore Nosso Acervo
+          </a>          
+        </section>
+
+        <div class="introducao-sobre">
+          <section class="sobre-intro">
+            <p>
+              No Portal dos Livros, acreditamos que cada livro é uma porta para um mundo desconhecido, uma conversa silenciosa com mentes brilhantes e um convite à transformação. Fundado por amantes da literatura, nosso espaço nasceu da paixão por histórias que transcendem o tempo — desde clássicos imortais até as vozes mais contemporâneas.
+            </p>
+            <p>
+              Aqui, você não encontra apenas livros, mas experiências. Entre estantes que guardam segredos e páginas que respiram vida, criamos um lar para quem busca refúgio nas palavras. Seja em romances arrebatadores, mistérios que desafiam a lógica ou poesias que cortam a alma, cada obra em nosso acervo foi escolhida com a curadoria de quem entende que ler é mais que um hábito: é um ato de coragem.
+            </p>
+          </section>
+
+          <section class="coluna-frase">
+            <blockquote>
+              "Entre estantes empoeiradas e segredos sussurrados, criamos um refúgio para os amantes da literatura."
+            </blockquote>
+          </section>
+        </div>
+
+        <section class="nossa-essencia">
+          <h2>Nossa Essência</h2>
+
+          <div class="cards-essencia">
+            <div class="card">
+              <img src="img/827062.png" alt="">
+              <h3>Curadoria Afetuosa</h3>
+              <p>Cada livro em nossas prateleiras foi selecionado como quem escolhe um presente para um velho amigo.</p>
+            </div>
+            
+            <div class="card">
+              <img src="img/3296160.png" alt="">
+              <h3>Comunidade de Leitores</h3>
+              <p>Um espaço para debates, encontros e aquele silêncio cúmplice de quem compartilha a mesma paixão.</p>
+            </div>
+
+            <div class="card">
+              <img src="img/2117054.png" alt="">
+              <h3>Jornada Personalizada</h3>
+              <p>Queremos ajudar você a encontrar não apenas um livro, mas o livro — aquele que fala diretamente à sua essência.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="nossa-historia">
+          <h2>Venha Fazer Parte Dessa História</h2>
+          <p>
+            Seja bem-vindo ao Portal dos Livros, onde as páginas ganham vida e os leitores viram personagens de suas próprias aventuras. Explore, descubra e deixe-se levar. Afinal, como dizem por aqui: "Alguns livros devem ser provados, outros devorados, e apenas alguns mastigados e digeridos." (Francis Bacon)
+          </p>
+          <button>
+            <a href="biblioteca.html" class="botao-link">Descubra Nosso Acervo</a>
+          </button>
+  
+          <button>
+            <a class="botao-link">Conheça Nossos Eventos</a>
+          </button>
+        </section>
+
+        <section class="escolha">
+          <h2>Por que nos escolher?</h2>
+          <p>✔ Acervo diversificado — Dos clássicos às novidades que ainda cheiram a tinta fresca.</p>
+          <p>✔ Ambiente acolhedor — Um cantinho perfeito para perder-se (e encontrar-se) entre as linhas.</p>
+          <p>✔ Paixão compartilhada — Aqui, todo mundo tem uma recomendação e uma história para contar.</p>
+        </section>
+
+        <section class="encerramento">
+          <p>
+            “Um livro deve ser o machado que quebra o mar gelado dentro de nós.” <br> — Franz Kafka
+          </p>
+        </section>
+
+      </div>
+
+      <footer class="footer">
+        <div class="footer-grid">
+  
+          <div>
+            <h3>© 2025 Portal Dos Livros</h3>
+            <p>Espaço dedicado à literatura e inspiração.</p>
+            <div class="icons">
+              <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://x.com/?lang=pt"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+  
+          <div>
+            <h3>Endereço</h3>
+            <p>Rua das Letras, 123</p>
+            <p>+55 (21) 91234-5678</p>
+            <p>portaldoslivros@gmail.com</p>
+          </div>
+  
+          <div>
+            <h3>Funcionamento</h3>
+            <p>Seg a Sex: 9h - 18h</p>
+            <p>Sábado: 10h - 14h</p>
+            <p>Domingo: Fechado</p>
+          </div>
+  
+          <div>
+            <h3>Inscreva-se Aqui :</h3>
+            <form id="formulario-inscricao">
+              <input type="email" id="email" placeholder="Seu e-mail" required>
+              <div class="campo-senha">
+                <input type="password" name="senha" id="senha" placeholder="Sua senha" required>
+                <button id="botao-mostrar-senha" type="button" aria-label="Mostrar ou ocultar senha">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+              </div>
+              <button id="botao-inscrever">Inscrever</button>
+            </form>
+          </div>
+  
+          <div id="modal-inscricao" class="modal-inscricao">
+            <div class="modal-inscricao-conteudo">
+              <p>Sua inscrição foi realizada com sucesso!</p>
+              <button id="fechar-modal-inscricao">Fechar</button>
+            </div>
+          </div>
+  
+        </div>
+      </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

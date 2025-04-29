@@ -1,0 +1,933 @@
+/*--------------------------------------------------------------
+# CONFIGURAÇÃO GERAL
+--------------------------------------------------------------*/
+
+/* Tira o espaçamento padrão dos navegadores e define o "box model" bonitinho */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Define o tamanho da página e a fonte que vai ser usada no corpo todo */
+html,
+body {
+  width: 100vw; /* usa 100% da largura da tela */
+  min-height: 100vh; /* usa pelo menos 100% da altura da tela */
+  font-family: 'Playfair Display SC', sans-serif;
+  background-color: #1d1b18; /* cor de fundo da página */
+  color: #e8d9c4; /* cor do texto */
+  line-height: 1.6; /* espaço entre linhas, pra leitura não ficar apertada */
+}
+
+/* Um contêiner geral pra agrupar tudo na vertical (cabeçalho, conteúdo, etc) */
+.container-geral {
+  display: flex; /* ativa o flexbox */
+  flex-direction: column; /* deixa tudo empilhadinho verticalmente */
+  width: 100vw;
+  min-height: 100vh;
+}
+
+
+/*--------------------------------------------------------------
+# Navbar section (menu do topo)
+--------------------------------------------------------------*/
+
+header {
+  background-color: #1d1b18; /* cor de fundo escura pra destacar o menu */
+  padding: 1rem;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+/* Nome do site no topo */
+header .site-name {
+  font-size: 1.5em;
+}
+
+/* Ícone de menu (aparece só no mobile) */
+header i.material-symbols-outlined {
+  display: block;
+  padding: 1rem 0;
+  cursor: pointer; /* vira uma mãozinha quando passa o mouse */
+}
+
+/* Menu escondido no mobile */
+header nav {
+  display: none;
+}
+
+/* Estilo dos itens do menu */
+header nav ul li {
+  list-style: none; /* tira as bolinhas da lista */
+  padding-bottom: 0.7rem;
+}
+
+header nav ul li a {
+  color: #e8d9c4; /* cor do link */
+  text-decoration: none; /* tira o sublinhado dos links */
+}
+
+/* Quando passa o mouse no link */
+header nav ul li a:hover {
+  color: #a39986;
+}
+
+
+/*--------------------------------------------------------------
+# Hero section 
+--------------------------------------------------------------*/
+
+section.hero {
+  background-image: url(../img/hero1.jpg); 
+  background-size: cover; /* cobre toda a área */
+  background-position: left center; /* posiciona a imagem */
+  height: 100%; /* altura total do container */
+  padding-bottom: 370px;
+  margin-top: 70px;
+}
+
+/* Conteúdo que vai dentro do hero */
+.content {
+  padding: 2rem; /* Espaço interno em volta do conteúdo */
+}
+
+.hero-title {
+  font-size: 3rem; /* Tamanho do título (bem grande) */
+  line-height: 1.2; /* Espaçamento entre as linhas do título */
+  font-weight: bold; /*negrito */
+  text-transform: uppercase; /* Deixa todas as letras do título em maiúsculas */
+  letter-spacing: 2px; /* Aumenta o espaço entre as letras */
+  margin-bottom: 1rem; /* Espaço abaixo do título */
+  margin-top: 100px; /* Espaço acima do título, para dar um afastamento da parte de cima da página */
+}
+
+.hero p {
+  font-size: 1.2rem; 
+  margin-bottom: 2rem; /* Espaço abaixo do parágrafo */
+}
+
+/* Botão estilizado */
+.botao {
+  font-family: lato, sans-serif;
+  font-weight: bold; /* negrito */
+  font-size: 1em;
+  letter-spacing: 0.1em; /* Aumenta um pouco o espaço entre as letras */
+  color: #cec1a8; 
+  text-decoration: none; /* Retira o sublinhado do botão */
+  border: 3px solid #cec1a8; 
+  padding: 12px 30px; /* Espaço interno dentro do botão (altura e largura) */
+  position: relative; /* Adicionado para conter o pseudo-elemento ::before*/
+  overflow: hidden;
+  display: inline-block; /* Para melhor comportamento do elemento a */
+  background-color: transparent;
+  transition: background-color .3s, color .3s;
+}
+
+.botao::before {
+  content: ""; /* Para exibir o estilo de ::before */
+  position: absolute;
+  top: 0;
+  left: -100%; /* Começa fora do botão (esquerda) */
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.6),
+    transparent
+  );
+  transform: skewX(-20deg); /* Inclina o brilho em 20 graus */
+  opacity: 0; /* Inicialmente invisível */
+  transition: opacity .3s; /* Suaviza o aparecimento */
+}
+
+.botao:hover::before {
+  opacity: 1; /* Torna o brilho visível */
+  animation: shine 2s forwards; /* Aciona a animação */
+}
+
+.botao:hover {
+  background-color: #d9cbb09d;
+  color: #1d1b18;
+}
+
+@keyframes shine {
+  0% { left: -100%; } /* Brilho começa fora do botão (esquerda) */
+  100% { left: 100%; } /* Brilho termina fora do botão (direita) */
+}
+
+/*--------------------------------------------------------------
+# Responsividade (ajustes para telas maiores, tipo computador)
+--------------------------------------------------------------*/
+
+@media screen and (min-width: 992px) {
+
+  /* Remove a rolagem lateral chata */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Ajusta o menu (navbar) pro desktop */
+  header {
+    display: flex;
+    align-items: center; /* alinha tudo no meio verticalmente */
+    justify-content: space-between; /* joga o nome do site pra um lado e o menu pro outro */
+    padding: 0 5rem;
+    width: 100%;
+    height: 80px;
+    background-color: #1d1b18;
+    font-family: 'Cinzel', serif;
+  }
+
+  /* Nome do site no desktop */
+  header .site-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #e8d9c4;
+  }
+
+  /* Some com o botão hambúrguer no desktop */
+  header i.material-symbols-outlined {
+    display: none;
+  }
+
+  /* Mostra o menu */
+  header nav {
+    display: block;
+  }
+
+  header nav ul {
+    display: flex;
+  }
+
+  header nav ul li {
+    display: flex;
+    padding: 1rem;
+  }
+
+  header nav ul li a:hover {
+    color: #a39986;
+  }
+
+  /* Efeito de barrinha ao passar o mouse no menu */
+  header nav ul li a::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: #55130b;
+    width: 0;
+    transition: width 0.4s ease;
+  }
+  a:hover::after {
+    width: 100%;
+  }
+
+  /* Ajustes no conteúdo principal pro desktop */
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding: 6.5rem 0 0 5rem;
+  }
+
+  .hero-title {
+    font-size: 5rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .botao {
+    width: 205px;
+  }
+}
+
+/*-------------------------------
+# Sobre section
+--------------------------------*/
+.sobre {
+  padding: 4rem 2rem; /* Espaço interno na seção (em cima/baixo e lados) */
+  background-color: #1d1b18; 
+  color: #a39986; 
+}
+
+/* Container com grid pra imagem e texto lado a lado */
+.sobre-container {
+  display: grid; /* Usa o layout grid para organizar os itens */
+  grid-template-columns: 1fr 1fr; /* Divide a área em duas colunas do mesmo tamanho */
+  gap: 6rem; /* Espaço entre a imagem e o texto */
+  align-items: center; /* Alinha os itens verticalmente no centro */
+  max-width: 1200px; /* Largura máxima da seção */
+  margin: 0 auto; /* Centraliza a seção na tela */
+}
+
+.sobre-img img {
+  width: 100%; /* A imagem ocupa toda a largura disponível */
+  height: auto; /* A altura é ajustada automaticamente */
+  border-radius: 12px; /* Cantos arredondados da imagem */
+  box-shadow: 0 10px 30px #00000033; 
+}
+
+.sobre-texto .subtitulo {
+  text-transform: uppercase; /* Deixa o subtítulo todo em maiúsculas */
+  font-size: 1rem; 
+  color: #7e6d5f; 
+  letter-spacing: 2px; /* Aumenta o espaçamento entre as letras do subtítulo */
+  margin-bottom: 1rem; /* Espaço abaixo do subtítulo */
+}
+
+.sobre-texto .titulo {
+  font-size: 2rem; 
+  margin-bottom: 1.5rem; /* Espaço abaixo do título */
+  font-weight: bold; /* negrito */
+}
+
+.sobre-texto p {
+  font-size: 1rem; 
+  line-height: 1.6; /* Aumenta o espaçamento entre as linhas (ajuda na leitura) */
+  margin-bottom: 2rem; /* Espaço abaixo do parágrafo */
+}
+
+/* Estilo do botão */
+.botao-sobre {
+  display: inline-block; /* Faz o botão ser inline, mas comportar-se como um bloco */
+  text-decoration: none; /* Retira o sublinhado do link que normalmente tem */
+  padding: 0.8rem 2rem; /* Espaço interno do botão (altura e largura) */
+  border: 2px solid #cec1a8; 
+  color: #cec1a8;
+  font-weight: bold; /* negrito */
+  transition: all 0.3s ease; /* Faz a transição ser suave quando o botão for clicado */
+}
+
+.botao-sobre:hover {
+  background-color: #e8d9c4; /* Cor de fundo do botão ao passar o mouse (dourado claro) */
+  color: #2a2926; /* Cor do texto quando o botão estiver com o hover (escuro) */
+}
+
+/* Responsivo para dispositivos móveis */
+@media (max-width: 768px) {
+  .sobre-container {
+    grid-template-columns: 1fr; /* Em telas pequenas, coloca tudo em uma coluna */
+    text-align: center; /* Centraliza o texto na tela */
+  }
+
+  .sobre-texto {
+    padding-top: 2rem; /* Espaço extra acima do texto para ficar bem posicionado */
+  }
+}
+
+/*--------------------------------------------------------------
+# Mais vendidos section 
+--------------------------------------------------------------*/
+.mais-vendidos {
+  padding: 3rem 2rem; /* Espaço interno da seção: 3rem em cima/baixo e 2rem nas laterais :) */
+  color: #e8d9c4; 
+  text-align: center; 
+}
+
+.mais-vendidos h2 {
+  font-size: 2.5rem; 
+  margin-bottom: 2rem; /* Espaço abaixo do título */
+  font-family: 'Cinzel', serif; 
+}
+
+.carousel {
+  display: flex; /* Coloca os itens lado a lado (horizontal) */
+  overflow-x: auto; /* Permite rolar horizontalmente se tiver muitos livros */
+  gap: 2rem; /* Espaço entre os livros */
+  padding-top: 2rem;
+  padding-bottom: 1rem; /* Espaço abaixo do carrossel */
+  scroll-behavior: smooth; /* Rolagem suavinha */
+}
+
+/* Estilo da barra de rolagem lateral */
+
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #e8d9c4, #2a2926);
+  border-radius: 10px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Cada caixinha de livro */
+.book {
+  display: flex; /* Usa flexbox dentro da caixinha */
+  flex-direction: column; /* Coloca os itens (imagem, título, etc) um embaixo do outro */
+  align-items: center; 
+  min-width: 200px; /* Largura mínima da caixinha */
+  background-color: #2a2926; 
+  padding: 1rem; /* Espaço interno */
+  border-radius: 10px; /* Cantos arredondados */
+  box-shadow: 0 4px 15px #0000004d; /* Sombra pra uma profundidade ne */
+  transition: transform 0.3s ease; /* Animação suave quando passa o mouse */
+  width: 240px; /* Largura fixa */
+  margin-left: 25px;
+}
+
+/* Quando passa o mouse em cima da caixinha, ela cresce um pouco */
+.book:hover {
+  transform: scale(1.03); /* Aumenta 3% */
+}
+
+.book img {
+  width: 170px; /* Largura da imagem */
+  height: 300px; /* Altura da imagem */
+  border-radius: 5px; /* Cantos arredondados da imagem */
+  margin-bottom: 1rem; /* Espaço abaixo da imagem */
+}
+
+.book-info {
+  text-align: center; 
+}
+
+.book-info .titulo {
+  font-size: 1rem;
+  font-weight: bold;/* negrito */
+  font-family: 'Playfair Display', serif;
+}
+
+.book-info .autor {
+  font-size: 0.9rem; 
+  color: #c9bfa6; 
+  margin: 0.3rem 0; /* Espaço acima e abaixo */
+}
+
+/* Estilo do preço */
+.book-info .preco {
+  font-size: 0.95rem; 
+  font-weight: bold; /* Negrito */
+  color: #d1a84b;
+}
+
+.botao-adicionar {
+  margin-top: 10px;
+  margin: 10px auto 0; /* isso centraliza o botão */
+  padding: 8px 16px;
+  background-color: #1d1b18;
+  color: #e8d9c4;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.botao-adicionar:hover {
+  background-color: #7e6d5f;
+}
+
+/* Modal para adicionar ao carrinho */
+
+.modal-carrinho {
+  display: none; /* Começa escondido */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-carrinho-conteudo {
+  background-color: #fff;
+  color: #302d28;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+.modal-carrinho button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #1d1b18;
+  color: #e8d9c4;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-carrinho button:hover {
+  background-color: #7e6d5f;
+}
+
+/*--------------------------------------------------------------
+# Categorias Section
+--------------------------------------------------------------*/
+.categorias {
+  display: flex; /* Coloca os blocos (caixinhas) um ao lado do outro */
+  flex-wrap: wrap; /* Se não couber na mesma linha, ele quebra para a linha de baixo */
+  padding-bottom: 100px; /* Espaço embaixo da seção */
+  background-color: #1d1b18; 
+  align-items: center; /* Alinha os itens no centro na vertical */
+  margin-top: 100px; /* Espaço no topo da seção */
+  width: 100%;
+  justify-content: center;
+}
+
+.caixinha {
+  width: 500px; /* Largura da caixinha */
+  height: 400px; /* Altura da caixinha */
+  background-color: #7e6d5f; 
+  color: #e8d9c4; 
+  text-align: center; /* Centraliza o texto horizontalmente */
+  padding: 20px; /* Espaço interno nas bordas da caixinha */
+  display: flex; /* Permite alinhar os elementos dentro da caixinha */
+  flex-direction: column; /* Organiza os elementos em coluna (um embaixo do outro) */
+  justify-content: center; /* Alinha tudo no centro verticalmente */
+  gap: 10px; /* Espaço entre os elementos dentro da caixinha */
+  margin-top: 25px; /* Espaço entre as caixinhas na vertical */
+  margin-left: 25px; /* Espaço entre as caixinhas na horizontal */
+  margin-right: 25px;
+}
+
+.caixinha h3 {
+  font-size: 20px; 
+}
+
+.caixinha p {
+  font-size: 14px; 
+}
+
+.caixinha a {
+  color: #d1a84b; 
+  text-decoration: none; /* Tira o sublinhado do link que sempre tem */
+  font-weight: bold; /* negrito */
+}
+
+.caixinha:hover {
+  background-color: #55130b; 
+}
+
+.caixinha i {
+  font-size: 2rem; 
+  color: #d1a84b; 
+  margin-bottom: 10px; /* Espaço abaixo do ícone */
+  display: block; /* Faz o ícone ocupar uma linha só pra ele */
+}
+/*--------------------------------------------------------------
+# Feedbacks section 
+--------------------------------------------------------------*/
+.feedbacks {
+  padding: 4rem 2rem; /* Espaço interno (em cima/baixo e lados) pra dar respiro */
+  text-align: center; 
+  font-family: 'Cinzel', serif; 
+  padding-bottom: 200px; /* Um espaço extra no final da seção */
+}
+
+.feedbacks h2 {
+  font-size: 2.8rem; 
+  margin-bottom: 2.5rem; /* Espaço embaixo do título */
+  border-bottom: 2px solid #7e6d5f; 
+  display: inline-block; /* Permite aplicar a borda só ao redor do texto */
+  padding-bottom: 0.5rem; /* Espaço entre o texto e a linha de baixo */
+  letter-spacing: 1px; /* Aumenta um pouco o espaçamento entre as letras */
+}
+
+.feed-container {
+  display: flex; /* Coloca os cards lado a lado */
+  flex-wrap: wrap; /* Se faltar espaço na linha, eles descem pra próxima */
+  justify-content: center; /* Alinha os cards ao centro da tela */
+  gap: 2.5rem; /* Espaço entre um card e outro */
+}
+
+.feedback-card {
+  background-color: #302d28; 
+  border-left: 4px solid #7e6d5f; /* Uma linha do lado esquerdo */
+  padding: 2rem; /* Espaço interno pra o conteúdo não ficar colado nas bordas */
+  max-width: 360px; /* Largura máxima do card */
+  border-radius: 12px; /* Cantos arredondados */
+  box-shadow: 0 0 25px #a982741a; /* Sombra ao redor (meio transparente) */
+  font-family: 'Cinzel', serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação suave quando passa o mouse */
+}
+
+.feedback-card:hover {
+  transform: translateY(-5px); /* Faz o card "levantar" um pouquinho quando passa o mouse */
+  box-shadow: 0 0 25px #7e6d5f; /* Deixa a sombra mais forte ao passar o mouse */
+}
+
+.feedback-texto {
+  font-style: italic; /* Deixa o texto em itálico (mais delicado ne) */
+  font-size: 1.1rem; 
+  margin-bottom: 1.5rem; /* Espaço entre o texto e o nome do autor */
+  line-height: 1.6; /* Altura entre as linhas (ajuda na leitura) */
+}
+
+.feedback-autor {
+  font-weight: bold; /* negrito */
+  color: #d1a84b; 
+  font-size: 0.95rem; /* Um pouco menor que o texto do comentário */
+}
+
+/*--------------------------------------------------------------
+# Footer section (rodapé da página)
+--------------------------------------------------------------*/
+.footer {
+  background: #302d28; 
+  padding: 40px 20px; /* Espaçamento interno: topo/baixo 40px, lados 20px */
+  font-family: 'Cinzel', serif;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Cria colunas flexíveis, no mínimo 200px ( isso é bom pq ai nao precisa usar media queries)*/ 
+  gap: 30px; /* Espaço entre colunas */
+  max-width: 1200px; /* Largura máxima do container */
+  margin: auto; /* Centraliza horizontalmente */
+}
+
+.footer h3 {
+  margin-bottom: 10px; /* Espaço abaixo do título */
+  font-size: 18px; 
+  color: #e4d9c4; 
+}
+
+.footer p {
+  font-size: 14px; /* Tamanho da fonte */
+  line-height: 1.6; /* Espaçamento entre linhas */
+}
+
+.footer input {
+  width: 100%; /* Ocupa toda a largura do container */
+  padding: 8px; /* Espaço interno */
+  border: none; /* Remove a borda padrão */
+  border-radius: 4px; /* Cantos arredondados */
+  margin-top: 5px; /* Espaço acima do input */
+  background: #1d1b18; 
+  color: #e4d9c4;
+}
+
+.footer .campo-senha {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.footer #senha {
+  position: relative;
+}
+
+.footer #botao-mostrar-senha {
+  background-color: transparent;
+  border: none;
+  color: #e8d9c4;
+  position: absolute;
+  right: 10px;
+  top: 13px;
+  cursor: pointer;
+}
+
+.footer #botao-inscrever {
+  margin-top: 10px; /* Espaço acima do botão */
+  padding: 8px 12px; /* Espaço interno */
+  background: #55130b;
+  border: none; /* Remove a borda padrão */
+  color: #e4d9c4; 
+  border-radius: 4px; /* Cantos arredondados */
+  cursor: pointer;
+}
+
+.footer #botao-inscrever:hover {
+  background: #960f00;
+  box-shadow: 0px 0px 10px #960f00;
+}
+
+.modal-inscricao {
+  display: none; /* Inicialmente escondido */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-inscricao-conteudo {
+  background-color: #fff;
+  color: #302d28;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+.modal-inscricao button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #1d1b18;
+  color: #e8d9c4;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-inscricao button:hover {
+  background-color: #7e6d5f;
+}
+
+/* Estilo dos ícones sociais */
+.icons a {
+  margin-right: 10px; /* Espaço entre os ícones */
+  color: #e8d9c4;
+  text-decoration: none; /* Remove o sublinhado padrão dos links */
+  font-size: 16px; /* Tamanho dos ícones */
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------
+# Novidades Section/Arquivo 
+------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.novidades {
+  font-family: 'Playfair Display', serif;  /* Fonte com cara de jornal antigo */
+  padding: 40px; /* Espaço interno: 40px em cima/baixo */
+  max-width: 1300px; /* Largura máxima de 1000px pra não ficar esticado demais */
+  margin: auto; /* Centraliza a seção no meio da tela */
+  border-top: 1px solid #c9bfa6; /* Linha fininha no topo como se fosse a divisão do jornal */
+}
+
+.cabecalho-novi {
+  text-align: center; /* Centraliza tudo horizontalmente */
+  margin-bottom: 30px; /* Espaço abaixo do cabeçalho */
+}
+
+.super-titulo {
+  font-size: 90px;
+  text-transform: uppercase; /* Deixa todas as letras maiúsculas */
+  letter-spacing: 2px; /* Espaço entre as letras, pra parecer mais elegante */
+  font-weight: bold; /* negrito */
+  margin: 0; /* Tira qualquer espaço externo ao redor do título */
+}
+
+.linha-separadora {
+  border-top: 1px solid #c9bfa6; /* Linha fininha no topo como se fosse a divisão do jornal */
+  margin: 15px auto 25px; /* Espaço acima, centralizada (auto) e espaço abaixo */
+}
+
+.conteudo-novi {
+  display: flex; /* Organiza os filhos em linha (lado a lado) */
+  flex-wrap: wrap; /* Se a tela for pequena, quebra a linha */
+  gap: 30px; /* Espaço de 30px entre o texto e a imagem garelinha */
+}
+
+/* Parte do texto (à esquerda ou acima em telas pequenas) */
+.texto-novi {
+  flex: 1; /* Ocupa o mesmo espaço que a outra coluna */
+  min-width: 250px; /* Garante no mínimo 250px de largura */
+}
+
+.texto-novi h2 {
+  font-size: 44px;
+  margin-bottom: 10px; /* Espaço abaixo do subtítulo */
+}
+
+.texto-novi p {
+  line-height: 1.6; /* Espaçamento entre as linhas do parágrafo */
+  margin-bottom: 15px; /* Espaço entre os parágrafos */
+  text-align: justify; /* Alinha o texto dos dois lados (tipo jornal) */
+}
+
+.img-novi {
+  flex: 1; /* Ocupa o mesmo espaço que a outra coluna */
+  min-width: 250px; /* Garante no mínimo 250px de largura */
+  text-align: center; 
+}
+
+.imagem-novi img {
+  max-width: 100%; /* A imagem nunca passa da largura do container */
+}
+
+
+/* TESTE MODAL CARRINHO */
+
+/* Estilos do Carrinho */
+.carrinho-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.carrinho-contador {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #d1a84b;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+/* Modal do Carrinho */
+.modal-carrinho {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-carrinho-conteudo {
+  background-color: #302d28;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  color: white;
+}
+
+.modal-carrinho-conteudo h2 {
+  margin-top: 0;
+  color: #d1a84b;
+}
+
+.itens-carrinho {
+  margin: 20px 0;
+}
+
+.item-carrinho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #444;
+}
+
+.item-carrinho-info {
+  flex: 1;
+}
+
+.item-carrinho-acoes {
+  display: flex;
+  align-items: center;
+}
+
+.item-carrinho-acoes button {
+  background-color: #d1a84b;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  margin: 0 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.item-carrinho-acoes button:hover {
+  background-color: #b8933a;
+}
+
+.total-carrinho {
+  font-weight: bold;
+  text-align: right;
+  margin: 20px 0;
+  font-size: 1.2em;
+}
+
+.botao-finalizar {
+  background-color: #d1a84b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1em;
+}
+
+.botao-finalizar:hover {
+  background-color: #b8933a;
+}
+
+/* Formulário de Pagamento */
+.form-pagamento {
+  display: none;
+}
+
+.form-pagamento input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid #444;
+  background-color: #444;
+  color: white;
+}
+
+.form-pagamento label {
+  display: block;
+  margin-top: 10px;
+}
+
+.mensagem-sucesso {
+  display: none;
+  text-align: center;
+  padding: 20px;
+}
+
+.mensagem-sucesso i {
+  font-size: 3em;
+  color: #4CAF50;
+  margin-bottom: 20px;
+}
+
+/* Notificação de item adicionado */
+.notificacao-carrinho {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #d1a84b;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-out {
+  animation: fadeOut 0.5s;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(20px); }
+}

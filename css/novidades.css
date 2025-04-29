@@ -1,0 +1,351 @@
+/*------------------------------------------------------------------------------------------------------------------------------------------------
+# Novidades Section/Arquivo 
+------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+.novidades {
+    font-family: 'Playfair Display', serif;  /* Fonte com cara de jornal antigo */
+    padding: 40px; /* Espaço interno: 40px em cima/baixo */
+    max-width: 1300px; /* Largura máxima de 1000px pra não ficar esticado demais */
+    margin: auto; /* Centraliza a seção no meio da tela */
+    border-top: 1px solid #c9bfa6; /* Linha fininha no topo como se fosse a divisão do jornal */
+    margin-top: 70px;
+  }
+  
+  .cabecalho-novi {
+    text-align: center; /* Centraliza tudo horizontalmente */
+    margin-bottom: 30px; /* Espaço abaixo do cabeçalho */
+  }
+  
+  /* Título bem grandão tipo "THE NEWS" */
+  .super-titulo {
+    font-size: 90px; /* Tamanho da fonte bem grande */
+    text-transform: uppercase; /* Deixa todas as letras maiúsculas */
+    letter-spacing: 2px; /* Espaço entre as letras, pra parecer mais elegante */
+    font-weight: bold; /* Deixa o texto em negrito */
+    margin: 0; /* Tira qualquer espaço externo ao redor do título */
+  }
+  
+  /* Linha fininha decorativa embaixo do THE NEWS */
+  .linha-separadora {
+    border-top: 1px solid #c9bfa6; /* Linha fininha no topo como se fosse a divisão do jornal */
+    margin: 15px auto 25px; /* Espaço acima, centralizada (auto) e espaço abaixo */
+  }
+  
+  /* Área com o texto da matéria e a imagem, lado a lado */
+  .conteudo-novi {
+    display: flex; /* Organiza os filhos em linha (lado a lado) */
+    flex-wrap: wrap; /* Se a tela for pequena, quebra a linha */
+    gap: 30px; /* Espaço de 30px entre o texto e a imagem garelinha */
+  }
+  
+  /* Parte do texto (à esquerda ou acima em telas pequenas) */
+  .texto-novi {
+    flex: 1; /* Ocupa o mesmo espaço que a outra coluna */
+    min-width: 250px; /* Garante no mínimo 250px de largura */
+  }
+
+  #data {
+    color: #e8d9c486;
+  }
+  
+  .texto-novi h2 {
+    font-size: 44px; /* Tamanho do subtítulo da matéria */
+    margin-bottom: 10px; /* Espaço abaixo do subtítulo */
+  }
+  
+  .texto-novi p {
+    line-height: 1.6; /* Espaçamento entre as linhas do parágrafo */
+    margin-bottom: 15px; /* Espaço entre os parágrafos */
+    text-align: justify; /* Alinha o texto dos dois lados (tipo jornal) */
+  }
+  
+  .img-novi {
+    flex: 1; /* Ocupa o mesmo espaço que a outra coluna */
+    min-width: 250px; /* Garante no mínimo 250px de largura */
+    text-align: center; /* Centraliza a imagem dentro da coluna */
+  }
+  
+  .imagem-novi img {
+    max-width: 100%; /* A imagem nunca passa da largura do container */
+  }
+
+  .novidades h2 {
+    text-align: center; /* Alinha o texto ao centro */
+    font-size: 44px; /* Tamanho do subtítulo da matéria */
+    margin-bottom: 20px; /* Espaço abaixo do subtítulo */
+  }
+  
+  .destaques-mes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .card-destaque {
+    width: 300px;
+    height: 680px;
+    text-align: center;
+    margin-bottom: 90px;
+  }
+
+  .borda-destaque {
+    border: 5px solid #c9bfa6;
+    display: flex;
+    padding: 10px;
+  }
+
+  .card-imagem1 {
+    background-image: url(../img/livro01.jpg);    
+    background-size: cover;
+    background-position: center;
+    width: 300px;
+    height: 400px;
+  }
+
+  .card-imagem2 {
+    background-image: url(../img/livro02.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 300px;
+    height: 400px;
+  }
+
+  .card-imagem3 {
+    background-image: url(../img/livro03.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 300px;
+    height: 400px;
+  }
+
+  .texto-destaque {
+    padding: 10px;
+  }
+
+  .texto-destaque h3 {
+    margin-bottom: 5px
+  }
+
+  .texto-destaque p {
+    margin-bottom: 10px;
+  }
+
+  .paragrafo-destaque {
+    text-align: justify;
+  }
+
+  .botao-destaque-leia-mais {
+    border: none;
+    background-color: #1d1b18;
+    color: #e8d9c4;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+
+  .botao-destaque-leia-mais:hover {
+    color: #55130b;
+    font-weight: bolder;
+  }
+
+  .leia-mais-destaque {
+    display: none;
+  }
+
+  /* MODAL */
+
+  .modal-destaque {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto; /* ADICIONA SCROLL VERTICAL AO MODAL */
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px 20px; /* Espaço interno para evitar corte do conteúdo */
+    box-sizing: border-box;
+  }
+  
+  .modal-conteudo-destaque {
+    color: #1d1b18;
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: justify;
+    position: relative;
+  }
+
+  .modal-conteudo-destaque .borda-destaque .card-imagem1 {
+    background-position: center;
+    background-size: cover;
+    height: 550px;
+    width: 350px;
+  }
+
+  .modal-conteudo-destaque .borda-destaque .card-imagem2 {
+    background-position: center;
+    background-size: cover;
+    height: 550px;
+    width: 350px;
+  }
+
+  .modal-conteudo-destaque .borda-destaque .card-imagem3 {
+    background-position: center;
+    background-size: cover;
+    height: 550px;
+    width: 350px;
+  }
+
+  .modal-conteudo-destaque .texto-destaque {
+    background-color: white;
+    padding: 20px;
+  }
+  
+  .fechar-modal {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #e8d9c4;
+    cursor: pointer;
+  }
+
+  .fechar-modal:hover {
+    color: #55130b;
+  }
+
+  .modal-conteudo-destaque .borda-destaque {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container-novidades {
+    border: 5px inset #e8d9c4;
+    padding: 10px;
+    height: 400px;
+    display: flex;
+  }
+
+  .container-novidades h3 {
+    font-size: 1.5rem;
+    margin: 0 15px 15px 0;
+  }
+
+  .filtro-categoria {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #form-categoria {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    min-width: 150px;
+    padding-top: 15px;
+  }
+
+  #form-categoria input {
+    cursor: pointer;
+  }
+
+  .container-novidades .em-alta {
+    flex: 1;
+    padding: 0 0 0 15px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .em-alta .caixinhas-livros {
+    display: flex;
+    height: 100%;
+    padding: 15px 15px 15px 0;
+    gap: 35px;
+  }
+
+  .em-alta .caixa-livro {
+    flex: 1;
+    height: 100%;
+  }
+
+  .em-alta .caixinhas-livros .borda-destaque {
+    flex: 1;
+  }
+
+  .livro01 {
+    background-image: url(../img/one-piece-vol-103.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .livro02 {
+    background-image: url(../img/e-nao-sobrou-nenhum.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .livro03 {
+    background-image: url(../img/codigo-fonte.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* Responsivo pro mobile */
+
+  @media screen and (max-width: 768px) {
+    .destaques-mes {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+    .card-destaque {        
+      margin-bottom: 15px;
+      height: 750px;
+    }
+
+    .modal-conteudo-destaque .borda-destaque .card-imagem1 {
+      background-position: center;
+      background-size: cover;
+      height: 400px;
+      width: 350px;
+    }
+
+    .modal-conteudo-destaque .borda-destaque .card-imagem2 {
+      background-position: center;
+      background-size: cover;
+      height: 400px;
+      width: 350px;
+    }
+
+    .modal-conteudo-destaque .borda-destaque .card-imagem3 {
+      background-position: center;
+      background-size: cover;
+      height: 400px;
+      width: 350px;
+    }
+
+    .container-novidades {
+      flex-direction: column;
+      height: 1200px;
+    }
+
+    .em-alta h3 {
+      margin-top: 15px;
+      margin-left: -15px;
+    }
+
+    .caixinhas-livros {
+      display: flex;
+      flex-direction: column;
+    }
+  }

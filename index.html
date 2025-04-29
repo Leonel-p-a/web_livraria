@@ -1,0 +1,372 @@
+<!------------------------------------------------------------
+ Created by Duda Gonçalves, Luiza, Gaby e Leonel
+  ----------------------------------------------------------->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Portal dos Livros</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Icon -->
+  <link rel="shortcut icon" href="img/icon2.png" type="image/x-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.cdnfonts.com/css/playfair-display-sc" rel="stylesheet"> <!-- Fonte de Textos em destaque -->
+  <link href="https://fonts.cdnfonts.com/css/cinzel" rel="stylesheet"> <!-- Fonte do navbar-->
+
+  <!-- Importa o ícone de hambúrguer -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+
+  <!-- Link para os icons das redes ( esse site é otimo para icons ) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main CSS File -->
+  <link href="css/main.css" rel="stylesheet">
+</head>
+<!-------------------------------------------------------------------- Navbar Section -------------------------------------------------------------------------------->
+
+<body>
+  <div class="container-geral">
+    <header>
+      <span class="site-name">LPT’| Portal dos Livros</span>
+
+      <i class="material-symbols-outlined" onclick="clickMenu()">menu</i>
+      <nav id="menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="biblioteca.html">Biblioteca</a></li>
+          <li><a href="novidades.html">Novidades</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li>
+            <div class="carrinho-icon">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span class="carrinho-contador" id="carrinho-contador">0</span>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="modal-carrinho" class="modal-carrinho">
+      <div class="modal-carrinho-conteudo">
+        <!-- Conteúdo do Carrinho -->
+        <div id="conteudo-carrinho">
+          <h2>Seu Carrinho</h2>
+          <div class="itens-carrinho" id="itens-carrinho">
+            <!-- Itens serão adicionados aqui dinamicamente -->
+          </div>
+          <div class="total-carrinho">
+            Total: R$ <span id="total-carrinho">0,00</span>
+          </div>
+          <button class="botao-finalizar" id="botao-finalizar">Finalizar Compra</button>
+        </div>
+    
+        <!-- Formulário de Pagamento (inicialmente oculto) -->
+        <div id="form-pagamento" class="form-pagamento">
+          <h2>Finalizar Compra</h2>
+          <form id="formulario-pagamento">
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" required>
+            
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" required>
+            
+            <label for="cartao">Número do Cartão:</label>
+            <input type="text" id="cartao" required>
+            
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" required>
+            
+            <button type="submit" class="botao-finalizar">Concluir Pagamento</button>
+          </form>
+        </div>
+    
+        <!-- Mensagem de Sucesso (inicialmente oculta) -->
+        <div id="mensagem-sucesso" class="mensagem-sucesso">
+          <i class="fas fa-check-circle"></i>
+          <h2>Pagamento efetuado com sucesso!</h2>
+          <p>Em breve você receberá um e-mail com o código de rastreio do seu produto.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-------------------------------------------------------------------- /Navbar Section -------------------------------------------------------------------------------->
+
+    <!-------------------------------------------------------------------- Hero Section -------------------------------------------------------------------------------->
+
+    <section class="hero">
+      <div class="content">
+        <h1 class="hero-title">
+          <span>Bem-Vindos</span><br>
+          <span>ao Portal dos Livros</span>
+        </h1>
+        <p>Explore nosso catálogo e encontre seu próximo favorito.</p>
+        <a href="biblioteca.html" class="botao"> Aventurar-se</a>
+      </div>
+    </section>
+
+    <!-------------------------------------------------------------------- /Hero Section -------------------------------------------------------------------------------->
+
+    <!-------------------------------------------------------------------- Sobre Section -------------------------------------------------------------------------------->
+    <section class="sobre">
+      <div class="sobre-container">
+
+        <div class="sobre-img">
+          <img src="img/livro-index01(01).jpeg" alt="foto-livraria">
+        </div>
+
+        <div class="sobre-texto">
+          <h3 class="subtitulo">nossa essência</h3>
+          <h2 class="titulo">
+            "Entre estantes empoeiradas e segredos sussurrados, criamos um refúgio para os amantes da literatura."
+          </h2>
+          <p>
+            Portal dos Livros é um refúgio para almas inquietas e amantes da palavra escrita.
+            Entre sombras e páginas, cada livro revela não só uma história, mas um convite à descoberta.
+            Aqui, a leitura é uma jornada silenciosa — e transformadora.
+          </p>
+          <a href="sobre.html" class="botao-sobre">Leia mais</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!--------------------------------------------------------------------- /Sobre Section -------------------------------------------------------------------------------->
+
+    <!-------------------------------------------------------------------- Mais vendidos Section -------------------------------------------------------------------------------->
+
+    <section class="mais-vendidos">
+      <h2>- Os favoritos da livraria -</h2>
+      <div class="carousel">
+
+        <div class="book">
+          <img src="img/book1.jpg" alt="Capa do Livro 1">
+          <div class="book-info">
+            <p class="titulo">Entendendo Algoritmos</p>
+            <p class="autor">Aditya Y. Bhargava</p>
+            <p class="preco">R$ 73,90</p>
+            <button class="botao-adicionar">Adicionar</button>
+          </div>
+        </div>
+
+        <div class="book">
+          <img src="img/book2.jpg" alt="Capa do Livro 2">
+          <div class="book-info">
+            <p class="titulo">Uma vida pequena</p>
+            <p class="autor">Hanya Yanagihara</p>
+            <p class="preco">R$ 90,66</p>
+            <button class="botao-adicionar">Adicionar</button>
+          </div>
+        </div>
+
+        <div class="book">
+          <img src="img/book3.jpg" alt="Capa do Livro 3">
+          <div class="book-info">
+            <p class="titulo">Orgulho e Preconceito</p>
+            <p class="autor">Jane Austin</p>
+            <p class="preco">R$ 49,90</p>
+            <button class="botao-adicionar">Adicionar</button>
+          </div>
+        </div>
+
+        <div class="book">
+          <img src="img/book4.jpg" alt="Capa do Livro 4">
+          <div class="book-info">
+            <p class="titulo">Domínio de um Rei </p>
+            <p class="autor">Rina Kent</p>
+            <p class="preco">R$ 66,90</p>
+            <button class="botao-adicionar">Adicionar</button>
+          </div>
+        </div>
+
+        <div class="book">
+          <img src="img/book5.jpeg" alt="Capa do Livro 5">
+          <div class="book-info">
+            <p class="titulo">It: A coisa</p>
+            <p class="autor">Stephen King</p>
+            <p class="preco">R$ 89,99</p>
+            <button class="botao-adicionar">Adicionar</button>
+          </div>
+        </div>
+
+        <div class="book">
+          <img src="img/book6.jpg" alt="Capa do Livro 6">
+          <div class="book-info">
+            <p class="titulo">Margot arruma a sua vida</p>
+            <p class="autor">Carrie McCrossen e Ian </p>
+            <p class="preco">R$ 29,90</p>
+            <button class="botao-adicionar">Adicionar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+       <div id="modal-carrinho" class="modal-carrinho">
+          <div class="modal-carrinho-conteudo">
+            <p>Livro adicionado ao carrinho!</p>
+            <button id="fechar-modal-carrinho">Fechar</button>
+          </div>
+        </div>
+
+    <!-------------------------------------------------------------------- /Sobre Section -------------------------------------------------------------------------------->
+
+    <!-------------------------------------------------------------------- Frase Section --------------------------------------------------------------------------------->
+
+    <section class="frase">
+      <div class="container" style="text-align: center; background-color: #302d28; min-height: 20vh; padding: 0 10px 40px 10px;">
+        <br>
+        <br>
+        <h2>"Livros não mudam o mundo. Quem muda o mundo são as pessoas. Os livros só mudam as pessoas."</h2>
+        <p>(Mario Quintana)</p>
+      </div>
+    </section>
+
+
+    <!-------------------------------------------------------------------- /Frase Section --------------------------------------------------------------------------------->
+
+    <!-------------------------------------------------------------------- Categorias Section --------------------------------------------------------------------------------->
+
+    <section class="categorias">
+
+      <div class="caixinha">
+        <i class="fa-solid fa-feather-pointed"></i>
+        <h3>Clássicos Imortais</h3>
+        <p>As obras que moldaram o mundo. De Jane Austin a Dostoiévski, aqui vivem os mestres da literatura.</p>
+        <a href="biblioteca.html">Descubra os Clássicos ➞</a>
+      </div>
+
+      <div class="caixinha">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <h3>Mistério & Suspense</h3>
+        <p>Casas sombrias, cartas não enviadas e segredos enterrados. Prepare-se para não largar o livro.</p>
+        <a href="biblioteca.html">Desvende os Mistérios ➞</a>
+      </div>
+
+      <div class="caixinha">
+        <i class="fa-solid fa-heart-crack"></i>
+        <h3>Romances Obscuros</h3>
+        <p>Amores intensos, proibidos e arrebatadores. Sentimentos profundos sob a penumbra do desconhecido.</p>
+        <a href="biblioteca.html">Sinta o Romance ➞</a>
+      </div>
+
+
+      <br>
+      <div class="caixinha">
+        <i class="fa-solid fa-scroll"></i>
+        <h3>Poesia & Filosofia</h3>
+        <p>Versos que cortam como navalha e reflexões que ecoam. Para quem gosta de mergulhar na alma.</p>
+        <a href="biblioteca.html">Leia & Reflita ➞</a>
+      </div>
+
+      <div class="caixinha">
+        <i class="fa-solid fa-book"></i>
+        <h3>Livros Raros</h3>
+        <p>Edições antigas, capas esquecidas pelo tempo e tesouros que merecem ser reencontrados.</p>
+        <a href="biblioteca.html">Explore os Raros ➞</a>
+      </div>
+
+      <div class="caixinha">
+        <i class="fa-solid fa-robot"></i>
+        <h3>Tecnologia & Futuro</h3>
+        <p>Da inteligência artificial à ficção científica que virou realidade. Para mentes que amam códigos e conexões.
+        </p>
+        <a href="biblioteca.html">Explore o Futuro ➞</a>
+      </div>
+    </section>
+    <!-------------------------------------------------------------------- /Categorias Section --------------------------------------------------------------------------------->
+
+    <!-------------------------------------------------------------------- Feedbacks Section --------------------------------------------------------------------------------->
+
+    <section class="feedbacks">
+      <h2>O que dizem nossos leitores</h2>
+
+      <div class="feed-container">
+        <div class="feedback-card">
+          <p class="feedback-texto">“O Portal dos Livros é mais que uma livraria. É um santuário para almas apaixonadas
+            por palavras.”</p>
+          <span class="feedback-autor">– Isabela R.</span>
+        </div>
+
+        <div class="feedback-card">
+          <p class="feedback-texto">“Descobri livros incríveis por aqui. Cada página do site é como uma viagem
+            literária.”</p>
+          <span class="feedback-autor">– Rafael M.</span>
+        </div>
+
+        <div class="feedback-card">
+          <p class="feedback-texto">“A curadoria é impecável! Me senti acolhida desde o primeiro clique.”</p>
+          <span class="feedback-autor">– Clara D.</span>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-------------------------------------------------------------------- /Feedbacks Section --------------------------------------------------------------------------------->
+
+    <!-------------------------------------------------------------------- Footer Section --------------------------------------------------------------------------------->
+
+    <footer class="footer">
+      <div class="footer-grid">
+
+        <div>
+          <h3>© 2025 Portal Dos Livros</h3>
+          <p>Espaço dedicado à literatura e inspiração.</p>
+          <div class="icons">
+            <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/?lang=pt"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h3>Endereço</h3>
+          <p>Rua das Letras, 123</p>
+          <p>+55 (21) 91234-5678</p>
+          <p>portaldoslivros@gmail.com</p>
+        </div>
+
+        <div>
+          <h3>Funcionamento</h3>
+          <p>Seg a Sex: 9h - 18h</p>
+          <p>Sábado: 10h - 14h</p>
+          <p>Domingo: Fechado</p>
+        </div>
+
+        <div>
+          <h3>Inscreva-se Aqui :</h3>
+          <form id="formulario-inscricao">
+            <input type="email" id="email" placeholder="Seu e-mail" required>
+            <div class="campo-senha">
+              <input type="password" name="senha" id="senha" placeholder="Sua senha" required>
+              <button id="botao-mostrar-senha" type="button" aria-label="Mostrar ou ocultar senha">
+                <i class="fa-solid fa-eye"></i>
+              </button>
+            </div>
+            <button id="botao-inscrever">Inscrever</button>
+          </form>
+        </div>
+
+        <div id="modal-inscricao" class="modal-inscricao">
+          <div class="modal-inscricao-conteudo">
+            <p>Sua inscrição foi realizada com sucesso!</p>
+            <button id="fechar-modal-inscricao">Fechar</button>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+  </div> <!-- Fechamento container geral -->
+
+<script src="script.js"></script>
+</body>
+
+</html>

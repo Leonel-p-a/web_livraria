@@ -1,0 +1,330 @@
+.container-sobre {
+    /* border: 1px solid white; */
+    width: 100%;
+    /* min-height: 100vh; */
+    margin-top: 150px;
+}
+
+.titulo-sobre {
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    margin-bottom: 60px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(../img/reserve-na-biblioteca-com-livro-aberto_1150-5920.avif) center/cover no-repeat; /* deixa a imagem de fundo semitransparente */
+    text-align: center;
+    color: #d9cbb0;
+}
+
+.titulo-sobre h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.titulo-sobre p {
+    font-size: 1.5rem;
+    margin-bottom: 45px;
+}
+
+.titulo-sobre a {
+    border: 2px solid #d9cbb0;
+    padding: 15px;
+    color: #d9cbb0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.titulo-sobre a:hover {
+    background-color: #d9cbb09d;
+    color: #1d1b18;
+    /* font-weight: bold; */
+}
+
+.titulo-sobre a {
+    position: relative; /* Para permitir posicionar o ::before em relação ao botão */
+    display: inline-block; /* Faz o elemento respeitar a largura/altura e padding */
+    padding: 15px 25px; /* Espaçamento interno */
+    color: #d9cbb0; /* Cor do texto */
+    text-decoration: none; /* Remove sublinhado */
+    font-weight: bold;
+    overflow: hidden; /* Evita que elementos ultrapassem a área do botão, assim, o efeito de animação só é visto de dentro do botão */
+    border: 2px solid #d9cbb0;
+    transition: background-color .3s, color .3s;  /* Transição suave para background e cor */
+}
+  
+.titulo-sobre a::before {
+    content: ""; /* Cria o elemento vazio */
+    position: absolute; /* Posicionamento livre dentro do botão */
+    top: 0; left: -100%; /* Começa completamente à esquerda, fora da área visível */
+    width: 100%; height: 100%; /* Mesmas dimensões do botão */
+    border: 2px solid rgba(217, 203, 176, .8);
+    background: linear-gradient( /* gradiente com transparência que cria efeito de luz */
+      90deg,
+      transparent,
+      rgba(255,255,255,.6),
+      transparent
+    );
+    transform: skewX(-20deg); /* Inclina a faixa que passa pelo botão */
+    opacity: 0; /* torna o efeito invísivel no estado normal e só ativa no hover */
+}
+  
+.titulo-sobre a:hover::before {
+    opacity: 1; /* torna efeito visível e anima */
+    animation: shine 2s forwards;
+}
+  
+.titulo-sobre a:hover {
+    background-color: #d9cbb09d;
+    color: #1d1b18;
+}
+  
+/* Keyframes de animação */
+@keyframes shine {
+    0%   { left: -100%; } /* Início: brilho fora, à esquerda */
+    50%  { left: 100%; } /* Meio: faixa de luz passando pelo meio do botão */
+    100% { left: 300%; } /* Final: faixa já saiu completamente à direita */
+}
+  
+  
+
+.introducao-sobre {
+    display: flex;
+}
+
+.introducao-sobre .sobre-intro {
+    width: 60%;
+    padding: 0 50px;
+}
+
+.introducao-sobre .sobre-intro p {
+    line-height: 2rem;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.coluna-frase {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    padding: 0 35px;
+    background: linear-gradient(rgba(0, 0, 0, 0.750), rgba(0, 0, 0, 0.650)), url(../img/livro-antigo-aberto-sobre-fundo-de-madeira-escura_1373-581.avif) center/cover no-repeat;
+}
+
+.nossa-essencia {
+    padding: 50px;
+}
+
+.nossa-essencia h2 {
+    padding: 0 0 50px 120px;
+}
+
+.cards-essencia {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+.card {
+    border: 2px solid #d9cbb0;
+    padding: 20px;
+    text-align: center;
+    min-width: 250px; /* Largura mínima */
+    flex: 1; /* Faz os cards crescerem igualmente */
+    max-width: 350px; /* Largura máxima */
+    transition-duration: 0.5s; /* Suavidade para o efeito do hover */
+}
+
+.card:hover {
+    transform: scale(1.1);
+    background-color: #d9cbb0;
+    color: #1d1b18;
+}
+
+.card img {
+    width: 100px;
+}
+
+.card p {
+    font-size: 0.8rem;
+    padding: 20px 0;
+}
+
+.nossa-historia {
+    background-color: black;
+    text-align: center;
+    padding: 25px;
+}
+
+.nossa-historia h2 {
+    padding: 15px;
+}
+
+.nossa-historia p {
+    padding-bottom: 25px;
+}
+
+.nossa-historia button a.botao-link {
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #1d1b18;
+}
+
+.nossa-historia button {
+    margin-right: 25px;
+    border: none;
+    border-radius: 55px;
+    background-color: #d9cbb0;
+    font-weight: bold;
+    font-size: 0.8rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.nossa-historia button:hover {
+    color: #1d1b18;
+    transform: translateY(-2px);
+}
+
+.nossa-historia button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.8),
+        transparent
+    );
+    transition: 0.6s ease;
+    z-index: -1;
+}
+
+.nossa-historia button:hover::before {
+    left: 100%;
+}
+
+/* Efeito de brilho na borda */
+.nossa-historia button::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 55px;
+    background: linear-gradient(
+        45deg,
+        #d9cbb0,
+        #f8f4ec,
+        #d9cbb0
+    );
+    background-size: 200% 200%;
+    z-index: -2;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.nossa-historia button:hover::after {
+    opacity: 0.8;
+    animation: borderShine 2s infinite;
+}
+
+@keyframes borderShine {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.escolha {
+    background-color: #1b1b1b;
+    padding: 50px;
+}
+
+.escolha h2 {
+    padding-bottom: 35px;
+}
+
+.escolha p {
+    padding-bottom: 15px;
+}
+
+.escolha p:last-child {
+    padding: 0;
+}
+
+.encerramento {
+    background-image: url(../img/pano-de-fundo-texturizado-de-veludo-cotele-escuro_53876-124413.avif);
+    background-size: cover;
+}
+
+.encerramento p {
+    padding: 50px;
+}
+
+
+/* DISPOSITIVOS MOBILE */
+
+@media screen and (max-width: 992px) {
+
+    .introducao-sobre {
+        flex-direction: column;
+    }
+
+    .introducao-sobre .sobre-intro {
+        width: 100%;
+    }
+
+    .coluna-frase {
+        width: 100%;
+        padding: 100px;
+    }
+
+    .titulo-sobre h1 {
+        font-size: 2.5rem;
+    }
+
+    .titulo-sobre p {
+        font-size: 1.2rem;
+    }
+
+    .nossa-essencia h2 {
+        padding: 0;
+    }
+
+    .cards-essencia {
+        justify-content: left;
+    }
+
+    .nossa-historia button {
+        margin: 10px 0;
+        width: 80%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 15px;
+    }
+    
+    .nossa-historia button:hover {
+        transform: none;
+    }
+}

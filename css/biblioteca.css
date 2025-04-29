@@ -1,0 +1,212 @@
+/*--------------------------------------------------------------
+# Biblioteca section 
+--------------------------------------------------------------*/
+
+/* Estilo geral da seção */
+.biblioteca {
+    
+    margin-top: 100px;
+  }
+  .titulo-bibli {
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    margin-bottom: 60px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    background: linear-gradient(hwb(0 0% 100% / 0.6), #00000099), url(../img/papel.jpg) center/cover no-repeat; /* deixa a imagem de fundo semitransparente */
+    text-align: center;
+    color: #d9cbb0;
+}
+
+.titulo-bibli h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.titulo-bibli p {
+    font-size: 1.5rem;
+    margin-bottom: 45px;
+}
+
+  /* Título principal */
+  .biblioteca h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+  }
+  
+
+/*-------------------------------
+# livro-destaque section
+--------------------------------*/
+.livro-destaque {
+    padding: 4rem 2rem; /* Espaço interno na seção (em cima/baixo e lados) */
+    background-color: #1d1b18; 
+    color: #a39986; 
+  }
+  
+  /* Container com grid pra imagem e texto lado a lado */
+  .container-destaque {
+    display: grid; /* Usa o layout grid para organizar os itens */
+    grid-template-columns: 1fr 1fr; /* Divide a área em duas colunas do mesmo tamanho */
+    gap: 6rem; /* Espaço entre a imagem e o texto */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    max-width: 1200px; /* Largura máxima da seção */
+    margin: 0 auto; /* Centraliza a seção na tela */
+  }
+  
+  .destaque-img img {
+    width: 100%; /* A imagem ocupa toda a largura disponível */
+    height: auto; /* A altura é ajustada automaticamente */
+    border-radius: 12px; /* Cantos arredondados da imagem */
+    box-shadow: 0 10px 30px #00000033; 
+  }
+  
+  .subtitulo {
+    text-transform: uppercase; /* Deixa o subtítulo todo em maiúsculas */
+    font-size: 1rem; 
+    color: #d1a84b; 
+    letter-spacing: 2px; /* Aumenta o espaçamento entre as letras do subtítulo */
+    margin-bottom: 1rem; /* Espaço abaixo do subtítulo */
+  }
+  
+  .destaque-texto .titulo {
+    font-size: 2rem; 
+    margin-bottom: 1.5rem; /* Espaço abaixo do título */
+    font-weight: bold; /* negrito */
+  }
+  
+  .destaque-texto p {
+    font-size: 1rem; 
+    line-height: 1.6; /* Aumenta o espaçamento entre as linhas (ajuda na leitura) */
+    margin-bottom: 2rem; /* Espaço abaixo do parágrafo */
+    font-family: 'Cinzel', serif;
+  }
+
+  .book-info p {
+    text-align: center; /* Centraliza as descrições dos livros */
+  }
+  
+  /* Responsivo para dispositivos móveis */
+  @media (max-width: 992px) {
+    .titulo-bibli h1 {
+      padding-top: 50px;
+    }
+
+    .container-destaque {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .destaque-texto {
+      padding-top: 2rem; /* Espaço extra acima do texto para ficar bem posicionado */
+    }
+  }
+  
+  
+/*-------------------------------
+# Contato section
+--------------------------------*/
+
+  .contato-dividido {
+    display: flex; /* Coloca os elementos lado a lado */
+    justify-content: space-between; /* Espaço entre o texto e a imagem */
+    align-items: center; /* Alinha os dois no centro verticalmente */
+    flex-wrap: wrap; /* Faz com que em telas pequenas os itens fiquem um embaixo do outro */
+    gap: 50px; /* Espaçamento entre o texto e a imagem */
+    padding: 70px; /* Espaço interno (respiro) dentro da seção */
+    background-color: #2a2926;
+  }
+  
+  .contato-texto {
+    flex: 1; /* Ocupa metade do espaço disponível */
+    min-width: 300px; /* Garante que ele não fique pequeno demais em telas pequenas */
+  }
+  
+  /* Estilo do botão */
+  .botao-sobre {
+    display: inline-block; /* Faz o botão ser inline, mas comportar-se como um bloco */
+    text-decoration: none; /* Retira o sublinhado do link que normalmente tem */
+    padding: 0.8rem 2rem; /* Espaço interno do botão (altura e largura) */
+    border: 2px solid #cec1a8; 
+    color: #cec1a8;
+    font-weight: bold; /* negrito */
+    transition: all 0.3s ease; /* Faz a transição ser suave quando o botão for clicado */
+  }
+  
+  .botao-sobre:hover {
+    background-color: #e8d9c4; /* Cor de fundo do botão ao passar o mouse (dourado claro) */
+    color: #2a2926; /* Cor do texto quando o botão estiver com o hover (escuro) */
+  }
+  
+  .contato-imagem {
+    flex: 1; /* Ocupa a outra metade do espaço disponível */
+    min-width: 300px; /* Também garante que não fique pequeno demais */
+    text-align: center; /* Centraliza a imagem dentro do espaço dela */
+  }
+  
+  .contato-imagem img {
+    max-width: 50%; /* Faz a imagem ocupar no máximo 100% da largura do espaço dela */
+    height: auto; /* Altura automática pra não distorcer a imagem */
+  }
+  
+/*-------------------------------
+# Contato section
+--------------------------------*/
+.indica {
+  padding: 4rem 2rem; /* Espaço interno (em cima/baixo = 4rem, lados = 2rem) */
+  text-align: center; /* Centraliza todo o texto da seção */
+  font-family: 'Cinzel', serif; 
+  padding-bottom: 200px; /* Dá um espaço extra no final da seção (embaixo) */
+}
+
+.indica h2 {
+  font-size: 2.8rem; 
+  margin-bottom: 2.5rem; /* Espaço entre o título e os cards */
+  border-bottom: 2px solid #7e6d5f; 
+  display: inline-block; /* Faz a linha ficar só no tamanho do texto */
+  padding-bottom: 0.5rem; /* Distância entre o texto e a linha */
+  letter-spacing: 1px; /* Espaço maior entre as letras pra dar estilo */
+}
+
+.indica-container {
+  display: flex; /* Organiza os cards em linha (lado a lado) */
+  flex-wrap: wrap; /* Se a tela for pequena, joga os cards pra baixo */
+  gap: 20px; /* Espaço entre os cards */
+  justify-content: center; /* Centraliza todos os cards no meio da tela */
+  padding: 20px; /* Espaço interno geral do container */
+}
+
+.livro-card {
+  background-color: #2a2926;
+  border-radius: 10px; /* Deixa os cantos arredondados */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave ao redor do card */
+  padding: 15px; /* Espaço interno do card */
+  width: 250px; /* Largura fixa do card */
+  text-align: center; /* Centraliza os textos e elementos dentro do card */
+}
+
+.livro-card img {
+  max-width: 100%; /* A imagem nunca ultrapassa a largura do card */
+  height: auto; /* A altura é ajustada automaticamente pra manter a proporção */
+  border-radius: 5px; /* Cantos levemente arredondados da imagem */
+  margin-bottom: 10px; /* Espaço entre a imagem e o título do livro */
+}
+
+.livro-card h3 {
+  font-size: 1.2rem;
+  margin: 10px 0 5px; /* Espaço em cima e embaixo do título */
+}
+
+.livro-card .sinopse {
+  font-size: 0.9rem; /* Fonte um pouco menor pra caber bem no card */
+  color: #e8d9c4;
+  margin-bottom: 10px; /* Espaço entre o texto e as estrelas */
+}
+
+.estrelas {
+  color: #f5c518; 
+  font-size: 1.2rem; /* Tamanho das estrelinhas */
+}

@@ -1,0 +1,443 @@
+<!------------------------------------------------------------
+ Created by Duda Gonçalves, Luiza, Gaby e Leonel
+  ----------------------------------------------------------->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Portal dos Livros</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Icon -->
+  <link rel="shortcut icon" href="img/icon2.png" type="image/x-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.cdnfonts.com/css/playfair-display-sc" rel="stylesheet"> <!-- Fonte de Textos em destaque -->
+  <link href="https://fonts.cdnfonts.com/css/cinzel" rel="stylesheet"> <!-- Fonte do navbar-->
+
+  <!-- Importa o ícone de hambúrguer -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+
+  <!-- Link para os icons das redes ( esse site é otimo para icons ) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main CSS File -->
+  <link href="css/main.css" rel="stylesheet">
+
+  <!-- Novidades CSS File -->
+  <link rel="stylesheet" href="css/novidades.css">
+</head>
+<!-------------------------------------------------------------------- Navbar Section -------------------------------------------------------------------------------->
+
+<body>
+  <div class="container-geral">
+    <header>
+      <span class="site-name">LPT’| Portal dos Livros</span>
+
+      <i class="material-symbols-outlined" onclick="clickMenu()">menu</i>
+      <nav id="menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="biblioteca.html">Biblioteca</a></li>
+          <li><a href="novidades.html">Novidades</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li>
+            <div class="carrinho-icon">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span class="carrinho-contador" id="carrinho-contador">0</span>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="modal-carrinho" class="modal-carrinho">
+      <div class="modal-carrinho-conteudo">
+        <!-- Conteúdo do Carrinho -->
+        <div id="conteudo-carrinho">
+          <h2>Seu Carrinho</h2>
+          <div class="itens-carrinho" id="itens-carrinho">
+            <!-- Itens serão adicionados aqui dinamicamente -->
+          </div>
+          <div class="total-carrinho">
+            Total: R$ <span id="total-carrinho">0,00</span>
+          </div>
+          <button class="botao-finalizar" id="botao-finalizar">Finalizar Compra</button>
+        </div>
+    
+        <!-- Formulário de Pagamento (inicialmente oculto) -->
+        <div id="form-pagamento" class="form-pagamento">
+          <h2>Finalizar Compra</h2>
+          <form id="formulario-pagamento">
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" required>
+            
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" required>
+            
+            <label for="cartao">Número do Cartão:</label>
+            <input type="text" id="cartao" required>
+            
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" required>
+            
+            <button type="submit" class="botao-finalizar">Concluir Pagamento</button>
+          </form>
+        </div>
+    
+        <!-- Mensagem de Sucesso (inicialmente oculta) -->
+        <div id="mensagem-sucesso" class="mensagem-sucesso">
+          <i class="fas fa-check-circle"></i>
+          <h2>Pagamento efetuado com sucesso!</h2>
+          <p>Em breve você receberá um e-mail com o código de rastreio do seu produto.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-------------------------------------------------------------------- /Navbar Section -------------------------------------------------------------------------------->
+
+    <!-------------------------------------------------------------------- Novidades Section -------------------------------------------------------------------------------->
+    <section class="novidades">
+
+      <div class="cabecalho-novi">
+        <h1 class="super-titulo">THE NEWS</h1>
+        <div class="linha-separadora"></div>
+        <!--<h2 class="titulo">Querido leitor,</h2>
+      <p class="data-jornal">21 de Abril, 2025</p>
+      <p class="subtitulo">As estantes sussurram — e nós ouvimos.</p>-->
+      </div>
+
+      <div class="conteudo-novi">
+        <div class="texto-novi">
+
+          <p id="data">21 de Abril, 2025</p>
+          <h2>O Segredo nas Estantes</h2>
+
+          <p>Caros leitores...</p>
+          <p>
+            Há quem diga que os livros antigos escondem mais do que poeira e páginas amareladas.
+            Esta semana, encontramos um bilhete misterioso entre as folhas de um clássico russo.
+            O que dizia? Ah... alguns segredos só revelam sua verdade aos olhos atentos.
+          </p>
+          <p>
+            Continue a ler, querido leitor, pois nesta coluna revelaremos encontros improváveis,
+            confissões literárias e o que mais estiver escondido entre as palavras.
+          </p>
+        </div>
+
+        <div class="img-novi imagem-novi"> <img src="img/novi1.jpg" alt="Livros"> </div>
+      </div>
+
+      <div class="linha-separadora"></div>
+
+      <h2>
+        Destaques do Mês
+      </h2>
+
+      <div class="destaques-mes">
+
+        <!-- CARD 1 -->
+        <div class="card-destaque">
+          <div class="borda-destaque">
+            <div class="card-imagem1">
+              <!-- Imagem nas CSS -->
+            </div>
+          </div>
+          <div class="texto-destaque">
+            <h3>
+              <!-- Título do livro -->
+              O poder do hábito: Por que fazemos o que fazemos na vida e nos negócios
+            </h3>
+            <p>
+              <!-- Autor -->
+              Autor: Charles Duhigg
+            </p>
+            <p class="paragrafo-destaque">
+              <!-- Breve descrição com ler mais... -->
+              Durante os últimos dois anos, uma jovem transformou quase todos os aspectos de sua vida. Parou de fumar,
+              correu uma maratona e foi promovida.
+
+              <button class="botao-destaque-leia-mais">
+                Leia mais...
+              </button>
+            </p>
+          </div>
+        </div>
+
+        <!-- MODAL fora do card -->
+        <div class="modal-destaque">
+          <div class="modal-conteudo-destaque">
+            <span class="fechar-modal"><i class="fa-solid fa-xmark-large">x</i></span>
+            <div class="borda-destaque">
+              <div class="card-imagem1">
+                <!-- Imagem nas CSS -->
+              </div>
+            </div>
+            <div class="texto-destaque">
+              <h3>O poder do hábito: Por que fazemos o que fazemos na vida e nos negócios</h3>
+              <p>Autor: Charles Duhigg</p>
+              <p class="paragrafo-destaque">
+                Durante os últimos dois anos, uma jovem transformou quase todos os aspectos de sua vida. Parou de fumar,
+                correu uma maratona e foi promovida.
+                Em um laboratório, neurologistas descobriram que os padrões dentro do cérebro dela mudaram de maneira
+                fundamental. Publicitários da Procter & Gamble observaram vídeos de pessoas fazendo a cama. Tentavam
+                desesperadamente descobrir como vender um novo produto chamado Febreze, que estava prestes a se tornar
+                um dos maiores fracassos na história da empresa. De repente, um deles detecta um padrão quase
+                imperceptível - e, com uma sutil mudança na campanha publicitária, Febreze começa a vender um bilhão de
+                dólares por anos. Um diretor executivo pouco conhecido assume uma das maiores empresas norte-americanas.
+                Seu primeiro passo é atacar um único padrão entre os funcionários - a maneira como lidam com a segurança
+                no ambiente de trabalho -, e logo a empresa começa a ter o melhor desempenho no índice Dow Jones. O que
+                todas essas pessoas tem em comum? Conseguiram ter sucesso focando em padrões que moldam cada aspecto de
+                nossas vidas. Tiveram êxito transformando hábitos. Com perspicácia e habilidade, Charles Duhigg
+                apresenta um novo entendimento da natureza humana e seu potencial para a transformação.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card-destaque">
+          <div class="borda-destaque">
+            <div class="card-imagem2">
+              <!-- Imagem nas CSS -->
+            </div>
+          </div>
+          <div class="texto-destaque">
+            <h3>
+              <!-- Título do livro -->
+              As coisas que você só vê quando desacelera: Como manter a calma em um mundo frenético
+            </h3>
+
+            <p>
+              <!-- Autor -->
+              Autor: Haemin Sunim
+            </p>
+            <p class="paragrafo-destaque">
+              <!-- Breve descrição com ler mais... -->
+              De tempos em tempos, surge um livro que, com sua maneira original de iluminar importantes temas
+              espirituais, se torna um fenômeno tão grande
+
+              <button class="botao-destaque-leia-mais">
+                Leia mais...
+              </button>
+            </p>
+          </div>
+        </div>
+
+        <!-- MODAL fora do card -->
+        <div class="modal-destaque">
+          <div class="modal-conteudo-destaque">
+            <span class="fechar-modal"><i class="fa-solid fa-xmark-large">x</i></span>
+            <div class="borda-destaque">
+              <div class="card-imagem2">
+                <!-- Imagem nas CSS -->
+              </div>
+            </div>
+            <div class="texto-destaque">
+              <h3>As coisas que você só vê quando desacelera: Como manter a calma em um mundo frenético</h3>
+              <p>Autor: Haemin Sunim</p>
+              <p class="paragrafo-destaque">
+                De tempos em tempos, surge um livro que, com sua maneira original de iluminar importantes temas
+                espirituais, se torna um fenômeno tão grande em seu país de origem que acaba chamando a atenção e
+                encantando leitores de todo o mundo.
+                Escrito pelo mestre zen-budista sul-coreano Haemin Sunim, As coisas que você só vê quando desacelera é
+                um desses raros e tão necessários livros para quem deseja tranquilizar os pensamentos e cultivar a calma
+                e a autocompaixão.
+
+                Ilustrado com extrema delicadeza, ele nos ajuda a entender nossos relacionamentos, nosso trabalho,
+                nossas aspirações e nossa espiritualidade sob um novo prisma, revelando como a prática da atenção plena
+                pode transformar nosso modo de ser e de lidar com tudo o que fazemos.
+
+                Você vai descobrir que a forma como percebemos o mundo é um reflexo do que se passa em nossa mente.
+                Quando nossa mente está alegre e compassiva, o mundo também está. Quando ela está repleta de pensamentos
+                negativos, o mundo parece sombrio. E quando nossa mente descansa, o mundo faz o mesmo.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card-destaque">
+          <div class="borda-destaque">
+            <div class="card-imagem3">
+              <!-- Imagem nas CSS -->
+            </div>
+          </div>
+          <div class="texto-destaque">
+            <h3>
+              <!-- Título do livro -->
+              É assim que acaba
+            </h3>
+
+            <p>
+              <!-- Autor -->
+              Autor: Colleen Hoover
+            </p>
+            <p class="paragrafo-destaque">
+              <!-- Breve descrição com ler mais... -->
+              Em É assim que acaba , Colleen Hoover nos apresenta Lily, uma jovem que se mudou de uma cidadezinha do
+              Maine para Boston, se formou em marketing e abriu a própria floricultura. E é em um dos terraços de Boston
+              que
+
+              <button class="botao-destaque-leia-mais">
+                Leia mais...
+              </button>
+            </p>
+          </div>
+        </div>
+
+        <!-- MODAL fora do card -->
+        <div class="modal-destaque">
+          <div class="modal-conteudo-destaque">
+            <span class="fechar-modal"><i class="fa-solid fa-xmark-large">x</i></span>
+            <div class="borda-destaque">
+              <div class="card-imagem3">
+                <!-- Imagem nas CSS -->
+              </div>
+            </div>
+            <div class="texto-destaque">
+              <h3>As coisas que você só vê quando desacelera: Como manter a calma em um mundo frenético</h3>
+              <p>Autor: Haemin Sunim</p>
+              <p class="paragrafo-destaque">
+                Em É assim que acaba , Colleen Hoover nos apresenta Lily, uma jovem que se mudou de uma cidadezinha do
+                Maine para Boston, se formou em marketing e abriu a própria floricultura. E é em um dos terraços de
+                Boston que ela conhece Ryle, um neurocirurgião confiante, teimoso e talvez até um pouco arrogante, com
+                uma grande aversão a relacionamentos, mas que se sente muito atraído por ela.
+                Quando os dois se apaixonam, Lily se vê no meio de um relacionamento turbulento que não é o que ela
+                esperava. Mas será que ela conseguirá enxergar isso, por mais doloroso que seja?
+
+                É assim que acaba é uma narrativa poderosa sobre a força necessária para fazer as escolhas certas nas
+                situações mais difíceis. Considerada a obra mais pessoal de Hoover, o livro aborda sem medo alguns tabus
+                da sociedade para explorar a complexidade das relações tóxicas, e como o amor e o abuso muitas vezes
+                coexistem em uma confusão de sentimentos.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="container-novidades">
+        <div class="filtro-categoria">
+          <h3>
+            Filtro de categorias
+          </h3>
+
+          <form id="form-categoria" action="">
+            <label for="romance">
+              <input type="checkbox" name="livros" id="romance">
+              Romance
+            </label>
+            <label for="aventura">
+              <input type="checkbox" name="livros" id="aventura">
+              Aventura
+            </label>
+            <label for="acao">
+              <input type="checkbox" name="livros" id="acao">
+              Ação
+            </label>
+            <label for="didatico">
+              <input type="checkbox" name="livros" id="didatico">
+              Didáticos
+            </label>
+            <label for="infantil">
+              <input type="checkbox" name="livros" id="infantil">
+              Infantil
+            </label>
+            <label for="quadrinhos">
+              <input type="checkbox" name="livros" id="quadrinhos">
+              Quadrinhos
+            </label>
+          </form>
+        </div>
+
+        <div class="em-alta">
+          <h3>
+            Em alta
+          </h3>
+          <div class="caixinhas-livros">
+            <div class="borda-destaque">
+              <div class="caixa-livro livro01">
+                <!-- Imagem nas CSS -->
+              </div>
+            </div>
+
+            <div class="borda-destaque">
+              <div class="caixa-livro livro02">
+                <!-- Imagem nas CSS -->
+              </div>
+            </div>
+
+            <div class="borda-destaque">
+              <div class="caixa-livro livro03">
+                <!-- Imagem nas CSS -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+
+      <div>
+        <h3>© 2025 Portal Dos Livros</h3>
+        <p>Espaço dedicado à literatura e inspiração.</p>
+        <div class="icons">
+          <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://x.com/?lang=pt"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Endereço</h3>
+        <p>Rua das Letras, 123</p>
+        <p>+55 (21) 91234-5678</p>
+        <p>portaldoslivros@gmail.com</p>
+      </div>
+
+      <div>
+        <h3>Funcionamento</h3>
+        <p>Seg a Sex: 9h - 18h</p>
+        <p>Sábado: 10h - 14h</p>
+        <p>Domingo: Fechado</p>
+      </div>
+
+      <div>
+        <h3>Inscreva-se Aqui :</h3>
+        <form id="formulario-inscricao">
+          <input type="email" id="email" placeholder="Seu e-mail" required>
+          <div class="campo-senha">
+            <input type="password" name="senha" id="senha" placeholder="Sua senha" required>
+            <button id="botao-mostrar-senha" type="button" aria-label="Mostrar ou ocultar senha">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </div>
+          <button id="botao-inscrever">Inscrever</button>
+        </form>
+      </div>
+
+      <div id="modal-inscricao" class="modal-inscricao">
+        <div class="modal-inscricao-conteudo">
+          <p>Sua inscrição foi realizada com sucesso!</p>
+          <button id="fechar-modal-inscricao">Fechar</button>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
